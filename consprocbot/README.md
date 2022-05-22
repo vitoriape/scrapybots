@@ -30,30 +30,12 @@ Consprocbot Documentation
     <img alt="Author" src="https://img.shields.io/badge/made%20by-Vitória Peçanha-white">
   </a>
   
-  <img alt="Top language" src="https://img.shields.io/github/languages/top/vitoriape/ConsprocBot?color=orange">
-  
   <img alt="Browser laucher" src="https://img.shields.io/badge/browser-Edge-cyan">
 
   <a href="https://github.com/vitoriape/ConsprocBot/blob/main/LICENSE">
     <img alt="License: GPL" src="https://img.shields.io/github/license/vitoriape/ConsprocBot?color=red">
   </a>
-  
-  <a href="https://github.com/vitoriape/ConsprocBot/commits/main">
-    <img alt="Last commit" src="https://img.shields.io/github/last-commit/vitoriape/ConsprocBot?color=lightgrey">
-  </a>
 	
-  <a href="https://github.com/vitoriape/ConsprocBot/archive/refs/heads/main.zip">
-    <img alt="Repo size" src="https://img.shields.io/github/repo-size/vitoriape/ConsprocBot?color=yellow">
-  </a>
-
-  <a href="https://github.com/vitoriape/ConsprocBot/releases">
-    <img alt="Repo updates" src="https://img.shields.io/github/release-date/vitoriape/ConsprocBot?color=green">
-  </a>
-	
-  <a href="https://github.com/vitoriape/ConsprocBot/releases">
-    <img alt="Repo last release" src="https://img.shields.io/github/v/release/vitoriape/ConsprocBot?color=brightgreen">
-  </a>
-
   <a href="https://github.com/vitoriape/ConsprocBot/releases">
     <img alt="Status" src="https://img.shields.io/badge/status-finish-blue">
   </a>
@@ -62,7 +44,7 @@ Consprocbot Documentation
 ---
 ---
 
-## **Getting started with ConsprocBot**
+## **Getting started with Consprocbot**
 ConsprocBot é um software de automação criado com Python. Ele foi desenvolvido para realizar webscraping em sites municipais de Andamento de Processos, anexando os mesmos em bases de dados mantidas com Excel.
 
 ### **Requirements**
