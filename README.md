@@ -8,7 +8,7 @@ Scrapybots Documentation
 ---
 
 <h3 align="center"> 
-<img alt="scrapybots banner" src="./assets/scrapybots-logo.PNG" width="1500" height="150">
+<img alt="scrapybots banner" src="./assets/scrapybots-logo.PNG" width="1500" height="250">
 </h3>
 
 <p align="center">
