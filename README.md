@@ -3,6 +3,8 @@ Scrapybots Documentation
 <!--ts-->
 * [Maintained Projects](#maintained-projects)
 * [Setup](#setup)
+* [Webdriver](#webdriver)
+    * [Selenium Webdriver Problems](#selenium-webdriver-problems)
 <!--te-->
 
 ---
@@ -48,18 +50,51 @@ Scrapybots Documentation
   <img alt="Progress status" src="https://progress-bar.dev/100/"></a>
 <p>
 	
-- `Consprocbot`: Webscraping em sites municipais de Andamento de Processos, anexando os mesmos em bases de dados mantidas com Excel
-- `Dwloopbot`: Download em massa de arquivos mantidos em páginas de cursos online
+- [Consprocbot](./consprocbot/): Webscraping em sites municipais de Andamento de Processos, anexando os mesmos em bases de dados mantidas com Excel
+- [Dwloopbot](./dwloopbot/): Download em massa de arquivos mantidos em páginas de cursos online
 
 ---
 
 ### **Setup**
-<table><thead><tr><th>Minimum</th><th>Recommended</th></tr></thead><tbody><tr><td>Requer um processador e um sistema operacional Windows ou Linux</td><td>Requer um processador e um sistema operacional Windows ou Linux</td></tr><tr><td>Kernel: <a href="https://www.python.org/downloads/release/python-370/" target="_blank" rel="noopener noreferrer">Python 3.7.0</a></td><td>Kernel: <a href="https://www.python.org/downloads/release/python-397/" target="_blank" rel="noopener noreferrer">Python 3.10.4</a></td></tr><tr><td>Libraries: pyautogui, selenium, openpyxl e os</td><td>Libraries: pyautogui, selenium, openpyxl e os</td></tr><tr><td>Drivers: any webdriver</td><td>Drivers: Edge webdriver</td></tr></tbody></table>
+Afim de facilitar o uso dos RPA's, adicione o executável Python que você utiliza dentro da variável `PATH` do seu sistema.
 
-<p align="left">
+<table><thead><tr><th>Minimum</th><th>Recommended</th></tr></thead><tbody><tr><td>Requer um processador e um sistema operacional Windows ou Linux</td><td>Requer um processador e um sistema operacional Windows ou Linux</td></tr><tr><td>Kernel: <a href="https://www.python.org/downloads/release/python-370/" target="_blank" rel="noopener noreferrer">Python 3.7.0</a></td><td>Kernel: <a href="https://www.python.org/downloads/release/python-397/" target="_blank" rel="noopener noreferrer">Python 3.10.4</a></td></tr><tr><td>Libraries: pyautogui, selenium, openpyxl e os</td><td>Libraries: pyautogui, selenium, msedge.selenium_tools, openpyxl e os</td></tr><tr><td>Drivers: any webdriver</td><td>Drivers: Edge webdriver</td></tr></tbody></table>
+
+<p align="center">
 <img alt="Python Badge" src="https://img.shields.io/badge/Running on Windows-002750?style=for-the-badge&logo=python&logoColor=yellow" />
 </p>
 
 ```cmd
 python filename.py
 ```
+
+---
+
+### **Webdriver**
+Faça o download do webdriver de acordo com o navegador de sua preferência e, para executar o mesmo através da biblioteca `selenium`, também adicione o mesmo na variável `PATH` do sistema, conforme orientado na seção [Setup](#setup). 
+
+#### **Selenium Webdriver Problems**
+Caso as configurações anteriores não funcionem e você comece a receber erros na execução do webdriver, faça o seguinte:
+
+**I. Instale a biblioteca msedge.selenium_tools**
+```cmd
+pip install msedge.selenium_tools
+```
+
+**II. Importe as bibliotecas necessárias**
+```python
+from selenium import webdriver
+from msedge.selenium_tools import EdgeOptions
+from msedge.selenium_tools import Edge
+```
+
+**III. Reconfigure o local com o webdriver executável**
+```python
+edge_options = EdgeOptions()
+edge_options.use_chromium = True
+nav = Edge(executable_path=r'C:\localondeoarquivoestasalvo\msedgedriver.exe', 
+            options=edge_options)
+```
+
+---
+---
