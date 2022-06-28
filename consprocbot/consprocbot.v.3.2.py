@@ -1,25 +1,28 @@
-#!/usr/bin/python
-
+import pyautogui
 import pyautogui as py_timeout
 import pyautogui as py_edge
-
-from selenium import webdriver as WebdriverOptions
+from selenium import webdriver as wd
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-
+from msedge.selenium_tools import EdgeOptions
+from msedge.selenium_tools import Edge
 from openpyxl import load_workbook
-
+import xlsxwriter as xw
+import pandas as pd
 import os
 
 
-cp_workbook_path = 'C:\\Users\\usuario\\Downloads\\consprocbot\\ProcessosConsproc.xlsx'
+cp_workbook_path = 'Z:\\localdoarquivo\\ProcessosConsproc.xlsx'
 cp_workbook = load_workbook(cp_workbook_path)
 
 cp_sheet_processos = cp_workbook['Processos']
 cp_sheet_andamento = cp_workbook['Andamento']
 
 
-py_edge = WebdriverOptions.Edge()
+edge_options = EdgeOptions()
+edge_options.use_chromium = True
+py_edge = Edge(executable_path='C:\\localdoarquivo\\msedgedriver.exe', options=edge_options)
+
 
 py_edge.get('https://www.riodasostras.rj.gov.br/consproc/cons_proc1.php')
 py_timeout.sleep(2)
@@ -58,8 +61,15 @@ for rProcessos in range(2, len(cp_sheet_processos['A']) + 1):
     py_timeout.sleep(2)
     py_edge.find_element(By.XPATH, '/html/body/div[1]/section[4]/div/div/div[2]/div/div[1]/div/div/button').send_keys(Keys.RETURN)
     
-    
+
 py_edge.close()
 cp_workbook.save(filename=cp_workbook_path)
 
-os.startfile(cp_workbook_path)
+
+cp_user_menu = pyautogui.confirm('Gostaria de abrir o arquivo?', buttons = ['Sim', 'Não'])
+
+if cp_user_menu == 'Sim':
+    os.startfile(cp_workbook_path)
+
+elif cp_user_menu == 'Não':
+    print("Teste")
