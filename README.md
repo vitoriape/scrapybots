@@ -8,6 +8,7 @@ Scrapybots Documentation
     * [Pyautogui](#pyautogui)
     * [Openpyxl](#openpyxl)
     * [Pandas](#pandas)
+    * [Python-Docx]()
   * [Webdriver](#webdriver)
     * [Webdriver Issues](#webdriver-issues)
 * [Maintained Projects](#maintained-projects)
@@ -87,6 +88,12 @@ pip install openpyxl
 pip install pandas
 ```
 
+#### **Python-Docx**
+`Cria e edita arquivos do Microsoft Word.`
+```python
+pip install python-docx
+```
+
 
 **Afim de facilitar o uso dos RPA's, adicione o executável Python que você utiliza dentro da variável `PATH` do seu sistema.**
 
@@ -137,6 +144,7 @@ nav = Edge(executable_path=r'C:\localondeoarquivoestasalvo\msedgedriver.exe',
 - [consprocbot](./consprocbot/): Obtém atualizações em sites municipais para acompanhar andamento de processos
 - [dwloopbot](./dwloopbot/): Download em massa de arquivos mantidos em páginas de cursos online
 - [sellsdatapy](./sellsdatapy/): Webscraping de sites de vendas
+- [docxbp](./docxbp/): Gera e edita arquivos docx em massa
 
 ---
 
